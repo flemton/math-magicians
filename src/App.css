@@ -12,7 +12,6 @@
   position: absolute;
   right: 40vw;
   top: 10vw;
-
 }
 
 .number-screen {
@@ -42,7 +41,12 @@
   background: rgb(227, 228, 233);
 }
 
-.number-input li, .operation li {
+li {
+  list-style: none;
+}
+
+.number-input li,
+.operation li {
   padding: 14px 29px;
   border: 0.06em solid whitesmoke;
   width: 16px;
@@ -50,11 +54,6 @@
 
 #zero {
   width: 40%;
-
-}
-
-li {
-  list-style: none;
 }
 
 .operation {
