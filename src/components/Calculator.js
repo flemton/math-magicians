@@ -1,4 +1,5 @@
 import { ReactPropTypes } from 'react';
+import uuid from 'react-uuid';
 
 const Button = ({
   className, value, onClick, id,
@@ -33,7 +34,7 @@ function Calculator(prop) {
       <div className="input">
         {buttons.flat().map((btn, i) => (
           <Button
-            key={i}
+            key={uuid()}
             id={`id-${i}`}
             className={btn === 0 ? 'zero' : 'number-input'}
             value={btn}
