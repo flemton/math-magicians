@@ -16,7 +16,7 @@
 
 .number-screen {
   display: flex;
-  background: grey;
+  background: #858694;
   width: 100%;
   height: 17%;
   justify-content: flex-end;
@@ -27,7 +27,8 @@
 }
 
 .input {
-  display: flex;
+  display: grid;
+    grid-template-columns: 5fr 5fr 5fr 5fr;
   background: whitesmoke;
   height: 83%;
   margin-top: 0.02em;
@@ -38,22 +39,25 @@
   flex-wrap: wrap;
   grid-template-columns: 5fr 5fr 5fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  background: rgb(227, 228, 233);
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  box-sizing: border-box;
+  border: 0.06em solid silver;
 }
 
 li {
   list-style: none;
 }
 
-.number-input li,
-.operation li {
-  padding: 14px 29px;
-  border: 0.06em solid whitesmoke;
-  width: 16px;
+.zero {
+  grid-column: 1/3;
 }
 
-#zero {
-  width: 40%;
+#id-3, #id-7, #id-11, #id-15, #id-18 {
+  background: #ff9a46;
 }
 
 .operation {
