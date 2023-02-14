@@ -1,4 +1,4 @@
-import { ReactPropTypes } from 'react';
+import { PropTypes } from 'prop-types';
 import uuid from 'react-uuid';
 
 const Button = ({
@@ -16,13 +16,6 @@ const buttons = [
   [1, 2, 3, '+'],
   [0, '.', '='],
 ];
-
-Button.propTypes = {
-  className: ReactPropTypes.string.isRequired,
-  value: ReactPropTypes.string.isRequired,
-  onClick: ReactPropTypes.func.isRequired,
-  id: ReactPropTypes.string.isRequired,
-};
 
 function Calculator(prop) {
   const { output } = prop;
@@ -46,5 +39,20 @@ function Calculator(prop) {
     </div>
   );
 }
+
+Button.propTypes = {
+  className: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
+  onClick: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.bool,
+    PropTypes.func,
+  ]).isRequired,
+  id: PropTypes.string.isRequired,
+};
 
 export default Calculator;
