@@ -1,5 +1,6 @@
 import { PropTypes } from 'prop-types';
 import uuid from 'react-uuid';
+import calculate from '../logic/calculate';
 
 const Button = ({
   className, value, onClick, id,
