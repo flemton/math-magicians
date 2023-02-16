@@ -18,13 +18,22 @@ const buttons = [
   [0, '.', '='],
 ];
 
+const calc = (btn) => {
+  const obj = {};
+  calculate(obj, btn);
+};
+
+const NoScreen = ({ output }) => (
+  <div className="number-screen">
+    {output}
+  </div>
+);
+
 function Calculator(prop) {
   const { output } = prop;
   return (
     <div className="calculator">
-      <div className="number-screen">
-        {output}
-      </div>
+      <NoScreen output={0} />
       <div className="input">
         {buttons.flat().map((btn, i) => (
           <Button
@@ -32,7 +41,7 @@ function Calculator(prop) {
             id={`id-${i}`}
             className={btn === 0 ? 'zero' : 'number-input'}
             value={btn}
-            onClick
+            onClick={calc(btn)}
           />
         ))}
       </div>
