@@ -32,12 +32,11 @@ function Calculator() {
 
   const { total, operation, next } = state;
   const output = operation == null ? '' : `${total} ${operation}`;
-  const nextNo = next || total;
+  const nextNo = next || output || total;
 
   return (
     <div className="calculator">
       <div className="number-screen">
-        {output}
         {nextNo}
       </div>
       <div className="input">
@@ -61,12 +60,7 @@ Button.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]).isRequired,
-  onClick: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.bool,
-    PropTypes.func,
-  ]).isRequired,
+  onClick: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
 };
 
