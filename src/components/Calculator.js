@@ -1,4 +1,5 @@
 import { PropTypes } from 'prop-types';
+import { useState } from 'react';
 import uuid from 'react-uuid';
 import calculate from '../logic/calculate';
 
@@ -18,9 +19,14 @@ const buttons = [
   [0, '.', '='],
 ];
 
+const [state, setState] = useState({
+  total: null,
+  next: null,
+  operation: null,
+});
+
 const calc = (btn) => {
-  const obj = {};
-  calculate(obj, btn);
+  setState(calculate(state, btn));
 };
 
 const NoScreen = ({ output }) => (
@@ -61,8 +67,15 @@ Button.propTypes = {
     PropTypes.number,
     PropTypes.bool,
     PropTypes.func,
-  ]).isRequired,
+  ]),
   id: PropTypes.string.isRequired,
+};
+
+NoScreen.propTypes = {
+  output: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
 };
 
 export default Calculator;
