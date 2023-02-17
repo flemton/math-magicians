@@ -30,13 +30,15 @@ function Calculator() {
     setState(calculate(state, btn));
   };
 
-  const { total, operation } = state;
+  const { total, operation, next } = state;
   const output = operation == null ? '' : `${total} ${operation}`;
+  const nextNo = next;
 
   return (
     <div className="calculator">
       <div className="number-screen">
         {output}
+        {nextNo}
       </div>
       <div className="input">
         {buttons.flat().map((btn, i) => (
