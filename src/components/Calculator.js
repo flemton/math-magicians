@@ -32,7 +32,7 @@ function Calculator() {
 
   const { total, operation, next } = state;
   const output = operation == null ? '' : `${total} ${operation}`;
-  const nextNo = next;
+  const nextNo = next || total;
 
   return (
     <div className="calculator">
