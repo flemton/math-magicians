@@ -19,27 +19,25 @@ const buttons = [
   [0, '.', '='],
 ];
 
-const [state, setState] = useState({
-  total: null,
-  next: null,
-  operation: null,
-});
+function Calculator() {
+  const [state, setState] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
-const calc = (btn) => {
-  setState(calculate(state, btn));
-};
+  const calc = (btn) => {
+    setState(calculate(state, btn));
+  };
 
-const NoScreen = ({ output }) => (
-  <div className="number-screen">
-    {output}
-  </div>
-);
+  const { total, operation } = state;
+  const output = operation == null ? '' : `${total} ${operation}`;
 
-function Calculator(prop) {
-  const { output } = prop;
   return (
     <div className="calculator">
-      <NoScreen output={0} />
+      <div className="number-screen">
+        {output}
+      </div>
       <div className="input">
         {buttons.flat().map((btn, i) => (
           <Button
@@ -47,11 +45,10 @@ function Calculator(prop) {
             id={`id-${i}`}
             className={btn === 0 ? 'zero' : 'number-input'}
             value={btn}
-            onClick={calc(btn)}
+            onClick={() => calc(btn)}
           />
         ))}
       </div>
-
     </div>
   );
 }
@@ -67,15 +64,8 @@ Button.propTypes = {
     PropTypes.number,
     PropTypes.bool,
     PropTypes.func,
-  ]),
-  id: PropTypes.string.isRequired,
-};
-
-NoScreen.propTypes = {
-  output: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
   ]).isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Calculator;
