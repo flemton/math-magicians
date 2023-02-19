@@ -71,7 +71,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://flemton.github.io/math-magicians/dist)
+- Not hosted yet
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
