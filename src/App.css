@@ -29,6 +29,10 @@
   display: flex;
 }
 
+li {
+  list-style: none;
+}
+
 .nav-links li {
   margin: 12px;
 }
@@ -83,10 +87,6 @@
 button {
   box-sizing: border-box;
   border: 0.06em solid silver;
-}
-
-li {
-  list-style: none;
 }
 
 .zero {
