@@ -47,6 +47,10 @@
   height: 280px;
 }
 
+.quotes {
+  font-size: 23px;
+}
+
 .number-screen {
   display: flex;
   background: #858694;

@@ -6,6 +6,7 @@ import Calculator from './components/Calculator';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import Layout from './components/Layout';
+import Quotes from './components/Quotes';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="calculator" element={<Calculator output="0" />} />
+          <Route path="quotes" element={<Quotes />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
