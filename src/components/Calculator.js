@@ -35,20 +35,23 @@ function Calculator() {
   const nextNo = next || output || total;
 
   return (
-    <div className="calculator">
-      <div className="number-screen">
-        {nextNo}
-      </div>
-      <div className="input">
-        {buttons.flat().map((btn, i) => (
-          <Button
-            key={uuid()}
-            id={`id-${i}`}
-            className={btn === 0 ? 'zero' : 'number-input'}
-            value={btn}
-            onClick={() => calc(btn)}
-          />
-        ))}
+    <div className="calculator-sect">
+      <h2>Lets do some maths</h2>
+      <div className="calculator">
+        <div className="number-screen">
+          {nextNo}
+        </div>
+        <div className="input">
+          {buttons.flat().map((btn, i) => (
+            <Button
+              key={uuid()}
+              id={`id-${i}`}
+              className={btn === 0 ? 'zero' : 'number-input'}
+              value={btn}
+              onClick={() => calc(btn)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

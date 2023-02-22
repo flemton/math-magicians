@@ -1,6 +1,42 @@
 .App {
   text-align: center;
   font-size: small;
+  padding: 12px;
+}
+
+.wrapper {
+  width: 60%;
+  padding: 0 50px 20px;
+  box-sizing: border-box;
+  border: 2px solid grey;
+  border-radius: 12px;
+  margin: 50px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.header {
+  font-size: 40px;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  margin: 12px;
+}
+
+.calculator-sect {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .calculator {
@@ -9,9 +45,6 @@
   flex-direction: column;
   width: 300px;
   height: 280px;
-  position: absolute;
-  right: 40vw;
-  top: 10vw;
 }
 
 .number-screen {
